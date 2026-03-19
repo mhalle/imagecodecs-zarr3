@@ -1,0 +1,37 @@
+[project]
+name = "imagecodecs-zarr3"
+version = "0.1.0"
+description = "Zarr v3 codec wrappers for imagecodecs"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "zarr>=3.0",
+    "imagecodecs>=2024.0",
+    "numpy",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/imagecodecs_zarr3"]
+
+[project.entry-points."zarr.codecs"]
+"imagecodecs_jpeg2k" = "imagecodecs_zarr3:Jpeg2kCodec"
+"imagecodecs_htj2k" = "imagecodecs_zarr3:Htj2kCodec"
+"imagecodecs_jpeg8" = "imagecodecs_zarr3:Jpeg8Codec"
+"imagecodecs_jpegls" = "imagecodecs_zarr3:JpeglsCodec"
+"imagecodecs_jpegxl" = "imagecodecs_zarr3:JpegxlCodec"
+"imagecodecs_jpegxr" = "imagecodecs_zarr3:JpegxrCodec"
+"imagecodecs_ljpeg" = "imagecodecs_zarr3:LjpegCodec"
+"imagecodecs_png" = "imagecodecs_zarr3:PngCodec"
+"imagecodecs_apng" = "imagecodecs_zarr3:ApngCodec"
+"imagecodecs_webp" = "imagecodecs_zarr3:WebpCodec"
+"imagecodecs_avif" = "imagecodecs_zarr3:AvifCodec"
+"imagecodecs_tiff" = "imagecodecs_zarr3:TiffCodec"
+"imagecodecs_gif" = "imagecodecs_zarr3:GifCodec"
+"imagecodecs_bmp" = "imagecodecs_zarr3:BmpCodec"
+"imagecodecs_qoi" = "imagecodecs_zarr3:QoiCodec"
+"imagecodecs_heif" = "imagecodecs_zarr3:HeifCodec"
+"imagecodecs_spng" = "imagecodecs_zarr3:SpngCodec"
